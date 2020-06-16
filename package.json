@@ -1,0 +1,22 @@
+{
+  "name": "prisma-issue-2746",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "yarn prisma generate",
+    "build": "webpack",
+    "docker:build": "docker build -t prisma-issue-2746 .",
+    "docker:run": "docker run --rm -it --name prisma-issue-2746 prisma-issue-2746",
+    "build-and-run": "yarn build && yarn docker:build && yarn docker:run"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.0.0"
+  },
+  "devDependencies": {
+    "@prisma/cli": "^2.0.0",
+    "copy-webpack-plugin": "^6.0.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
